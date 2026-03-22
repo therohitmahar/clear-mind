@@ -20,7 +20,8 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
+    default:
+      "Online Counseling & Mental Health Therapy Services | ClearMind | ClearMind Counseling",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -38,7 +39,8 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
+    title:
+      "Online Counseling & Mental Health Therapy Services | ClearMind | ClearMind Counseling",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -55,7 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
+    title:
+      "Online Counseling & Mental Health Therapy Services | ClearMind | ClearMind Counseling",
     description: siteConfig.description,
     images: [absoluteUrl("/twitter-image?v=home-og-v2")],
   },

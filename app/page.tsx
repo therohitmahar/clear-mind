@@ -15,9 +15,10 @@ import { siteConfig, contactInfo, images, socialLinks } from "@/lib/data";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Psychologists in Mira Road for Anxiety & Overthinking",
+  title:
+    "Online Counseling & Mental Health Therapy Services | ClearMind | ClearMind Counseling",
   description:
-    "ClearMind Counseling offers online and in-person therapy in Mira Road for anxiety, overthinking, stress, low mood, burnout, relationships, and emotional well-being.",
+    "ClearMind Counseling offers professional online counseling and in-person therapy services to individuals seeking support for their mental health needs. Discover a compassionate platform dedicated to your well-being.",
   path: "/",
   keywords: [
     "psychologists in Mira Road",
