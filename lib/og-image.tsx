@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { contactInfo, siteConfig } from "@/lib/data";
+import { siteConfig } from "@/lib/data";
 
 export const ogImageSize = {
   width: 1200,
@@ -19,7 +19,7 @@ export function createOgImage({
   eyebrow,
   title,
   description,
-  badge = contactInfo.addressShort,
+  badge,
 }: OgImageOptions) {
   return new ImageResponse(
     (
@@ -30,42 +30,42 @@ export function createOgImage({
           display: "flex",
           position: "relative",
           overflow: "hidden",
-          background:
-            "linear-gradient(135deg, #f8f7f1 0%, #edf5ee 52%, #d7e8da 100%)",
+          background: "linear-gradient(135deg, #f8f7f1 0%, #eef4ef 100%)",
           color: "#18231d",
-          padding: "56px",
         }}
       >
         <div
           style={{
             position: "absolute",
             inset: "32px",
-            borderRadius: "36px",
+            borderRadius: "32px",
             border: "1px solid rgba(24, 35, 29, 0.08)",
           }}
         />
         <div
           style={{
             position: "absolute",
-            top: "-120px",
-            right: "-80px",
-            width: "360px",
-            height: "360px",
-            borderRadius: "999px",
-            background: "rgba(125, 168, 140, 0.18)",
+            top: "72px",
+            right: "72px",
+            width: "160px",
+            height: "160px",
+            borderRadius: "36px",
+            background: "rgba(64, 104, 63, 0.08)",
+            border: "1px solid rgba(64, 104, 63, 0.12)",
           }}
         />
         <div
           style={{
             position: "absolute",
-            bottom: "-140px",
-            left: "-70px",
-            width: "320px",
-            height: "320px",
+            top: "110px",
+            right: "148px",
+            width: "10px",
+            height: "180px",
             borderRadius: "999px",
-            background: "rgba(82, 121, 111, 0.12)",
+            background: "#40683f",
           }}
         />
+
         <div
           style={{
             position: "relative",
@@ -75,91 +75,61 @@ export function createOgImage({
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            padding: "64px",
           }}
         >
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
+              flexDirection: "column",
+              gap: "28px",
+              maxWidth: "820px",
             }}
           >
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                gap: "18px",
-                maxWidth: "830px",
+                alignItems: "center",
+                gap: "12px",
+                fontSize: 22,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#40683f",
               }}
             >
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  fontSize: 22,
-                  fontWeight: 600,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#40683f",
+                  width: "12px",
+                  height: "12px",
+                  borderRadius: "999px",
+                  background: "#40683f",
                 }}
-              >
-                <div
-                  style={{
-                    width: "12px",
-                    height: "12px",
-                    borderRadius: "999px",
-                    background: "#40683f",
-                  }}
-                />
-                {eyebrow}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: 68,
-                    lineHeight: 1.05,
-                    fontWeight: 700,
-                    letterSpacing: "-0.04em",
-                    maxWidth: "900px",
-                  }}
-                >
-                  {title}
-                </div>
-                <div
-                  style={{
-                    fontSize: 28,
-                    lineHeight: 1.35,
-                    color: "#3a4a40",
-                    maxWidth: "830px",
-                  }}
-                >
-                  {description}
-                </div>
-              </div>
+              />
+              {eyebrow}
             </div>
+
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                minWidth: "220px",
-                padding: "16px 22px",
-                borderRadius: "999px",
-                background: "rgba(255, 255, 255, 0.75)",
-                border: "1px solid rgba(24, 35, 29, 0.08)",
-                fontSize: 20,
-                fontWeight: 600,
-                color: "#23402b",
+                fontSize: 62,
+                lineHeight: 1.08,
+                fontWeight: 700,
+                letterSpacing: "-0.045em",
+                maxWidth: "860px",
               }}
             >
-              Online & In-Person
+              {title}
+            </div>
+
+            <div
+              style={{
+                fontSize: 26,
+                lineHeight: 1.45,
+                color: "#46564b",
+                maxWidth: "780px",
+              }}
+            >
+              {description}
             </div>
           </div>
 
@@ -167,7 +137,7 @@ export function createOgImage({
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center",
+              alignItems: "flex-end",
               gap: "24px",
             }}
           >
@@ -180,7 +150,7 @@ export function createOgImage({
             >
               <div
                 style={{
-                  fontSize: 34,
+                  fontSize: 32,
                   fontWeight: 700,
                   letterSpacing: "-0.03em",
                 }}
@@ -189,29 +159,32 @@ export function createOgImage({
               </div>
               <div
                 style={{
-                  fontSize: 24,
+                  fontSize: 22,
                   color: "#486055",
                 }}
               >
-                Compassionate therapy for anxiety, overthinking, stress, and
-                emotional well-being.
+                {siteConfig.tagline}
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "16px 22px",
-                borderRadius: "999px",
-                background: "#183126",
-                color: "#f7fbf8",
-                fontSize: 20,
-                fontWeight: 600,
-              }}
-            >
-              {badge}
-            </div>
+
+            {badge ? (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "14px 20px",
+                  borderRadius: "999px",
+                  border: "1px solid rgba(64, 104, 63, 0.12)",
+                  background: "rgba(255, 255, 255, 0.75)",
+                  color: "#23402b",
+                  fontSize: 18,
+                  fontWeight: 600,
+                }}
+              >
+                {badge}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
