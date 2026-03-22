@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl("/opengraph-image"),
+        url: absoluteUrl("/opengraph-image?v=home-og-v2"),
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} Open Graph image`,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
     description: siteConfig.description,
-    images: [absoluteUrl("/twitter-image")],
+    images: [absoluteUrl("/twitter-image?v=home-og-v2")],
   },
   robots: {
     index: true,

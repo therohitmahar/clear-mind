@@ -14,6 +14,9 @@ export const defaultSeoKeywords = [
   "mental health support",
 ];
 
+const DEFAULT_OG_IMAGE_PATH = "/opengraph-image?v=home-og-v2";
+const DEFAULT_TWITTER_IMAGE_PATH = "/twitter-image?v=home-og-v2";
+
 export function absoluteUrl(path = "/") {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
 
@@ -52,8 +55,8 @@ export function createPageMetadata({
   description,
   path,
   keywords = [],
-  imagePath = "/opengraph-image",
-  twitterImagePath = "/twitter-image",
+  imagePath = DEFAULT_OG_IMAGE_PATH,
+  twitterImagePath = DEFAULT_TWITTER_IMAGE_PATH,
   type = "website",
   noIndex = false,
   publishedTime,
