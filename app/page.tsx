@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Symptoms from "@/components/sections/Symptoms";
 import Methodology from "@/components/sections/Methodology";
@@ -10,7 +11,21 @@ import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 import Mission from "@/components/sections/Mission";
 import Gallery from "@/components/sections/Gallery";
-import { siteConfig, contactInfo } from "@/lib/data";
+import { siteConfig, contactInfo, images, socialLinks } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Psychologists in Mira Road for Anxiety & Overthinking",
+  description:
+    "ClearMind Counseling offers online and in-person therapy in Mira Road for anxiety, overthinking, stress, low mood, burnout, relationships, and emotional well-being.",
+  path: "/",
+  keywords: [
+    "psychologists in Mira Road",
+    "therapy for anxiety Mira Road",
+    "counseling for overthinking",
+    "online and in-person therapy",
+  ],
+});
 
 // JSON-LD Structured Data
 const jsonLd = {
@@ -34,9 +49,11 @@ const jsonLd = {
     latitude: "19.2817",
     longitude: "72.8529",
   },
+  image: images.hero,
   openingHours: "Mo-Sa 09:00-20:00",
   priceRange: "₹₹",
   medicalSpecialty: "Psychiatric",
+  sameAs: [socialLinks.instagram, socialLinks.linkedin],
   availableService: [
     {
       "@type": "MedicalTherapy",
@@ -57,6 +74,7 @@ const jsonLd = {
         "Age-appropriate support for young minds navigating emotional challenges.",
     },
   ],
+  founder: ["Janhavi More", "Vikas Kamble"],
 };
 
 export default function HomePage() {

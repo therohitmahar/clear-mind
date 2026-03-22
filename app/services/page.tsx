@@ -2,16 +2,24 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, type LucideIcon, Users, Baby, Briefcase } from "lucide-react";
 import { services, servicesFaqItems, images } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Our Therapy Services",
   description:
     "Comprehensive mental health support: Individual Therapy, Group/Family Therapy, Child & Adolescents Therapy, and Corporate Events.",
-};
+  path: "/services",
+  keywords: [
+    "individual therapy Mira Road",
+    "family therapy Mira Road",
+    "child therapy Mira Road",
+    "corporate mental health workshops",
+  ],
+});
 
 const serviceIconMap: Record<string, LucideIcon> = {
   Users,

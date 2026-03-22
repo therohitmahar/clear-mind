@@ -12,6 +12,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { blogArticles, therapists } from "@/lib/data";
+import { createPageMetadata, toIsoDate } from "@/lib/seo";
 import Button from "@/components/ui/Button";
 
 interface PageProps {
@@ -67,13 +68,27 @@ export async function generateMetadata({
   const article = blogArticles.find((entry) => entry.slug === slug);
 
   if (!article) {
-    return { title: "Article Not Found" };
+    return createPageMetadata({
+      title: "Article Not Found",
+      description: "The article you are looking for could not be found.",
+      path: "/resources",
+      noIndex: true,
+    });
   }
 
-  return {
+  return createPageMetadata({
     title: article.title,
     description: article.excerpt,
-  };
+    path: `/resources/${article.slug}`,
+    imagePath: `/resources/${article.slug}/opengraph-image`,
+    twitterImagePath: `/resources/${article.slug}/twitter-image`,
+    type: "article",
+    publishedTime: toIsoDate(article.date),
+    authors: article.author ? [article.author] : undefined,
+    section: article.category,
+    tags: [article.category, "mental health", "therapy", "ClearMind Counseling"],
+    keywords: [article.category, article.title, "ClearMind Counseling articles"],
+  });
 }
 
 export async function generateStaticParams() {

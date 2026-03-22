@@ -84,8 +84,8 @@ export const siteConfig = {
   heroSubtitle: "We believe in a client-centred approach that offers compassionate, non-judgmental support tailored to your unique experiences",
   heroCtaText: "You didn't come this far to stop",
   description:
-    "Your mental health is interconnected. We address how your thoughts, body, relationships, and surroundings affect you. We believe in a client-centred approach that offers compassionate, non-judgmental support tailored to your unique experiences.",
-  url: "https://clearmindcounseling.in",
+    "ClearMind Counseling offers online and in-person therapy in Mira Road for anxiety, overthinking, stress, burnout, low mood, relationships, and emotional well-being.",
+  url: "https://clearmindcounseling.vercel.app",
   location: "Mira Road (E), Maharashtra, India",
   established: 2023,
 };

@@ -2,14 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Heart, Lock, BrainCircuit, type LucideIcon } from "lucide-react";
 import { guidingPrinciples, clinicPhotos, aboutStats, aboutFounders, siteConfig } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import CTA from "@/components/sections/CTA";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "About Us",
   description:
     "Learn about ClearMind Counseling — our journey, values, and why we created a sanctuary for mental well-being in Mira Road.",
-};
+  path: "/about",
+  keywords: [
+    "about ClearMind Counseling",
+    "psychologists in Mira Road",
+    "therapy clinic Mira Road",
+  ],
+});
 
 const iconMap: Record<string, LucideIcon> = { Heart, Lock, BrainCircuit };
 

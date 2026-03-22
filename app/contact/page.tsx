@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import { contactInfo, connectionModes } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import { MapPin, Clock, Phone, Mail, ExternalLink, Armchair, Video, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ContactForm from "./ContactForm";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contact Us",
   description:
     "Get in touch with ClearMind Counseling. Book a session, visit our clinic in Mira Road, or reach us online. We're here to help.",
-};
+  path: "/contact",
+  keywords: [
+    "contact ClearMind Counseling",
+    "therapy clinic Mira Road contact",
+    "book therapy session Mira Road",
+  ],
+});
 
 const connectionIconMap: Record<string, LucideIcon> = { Armchair, Video };
 

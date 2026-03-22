@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import { siteConfig } from "@/lib/data";
+import { absoluteUrl } from "@/lib/seo";
 import LayoutWrapper from "./LayoutWrapper";
 import "@/styles/globals.css";
 
@@ -19,36 +20,55 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Anxiety & Overthinking Therapy in Mira Road`,
+    default: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "anxiety therapy",
-    "overthinking",
-    "psychologist Mira Road",
-    "counseling",
-    "mental health",
-    "CBT therapy",
-    "online therapy India",
-    "ClearMind Counseling",
-  ],
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
+  category: "healthcare",
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
   openGraph: {
-    title: siteConfig.name,
+    title: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: absoluteUrl("/opengraph-image"),
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} Open Graph image`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: "Psychologists in Mira Road for Anxiety, Overthinking & Therapy",
     description: siteConfig.description,
+    images: [absoluteUrl("/twitter-image")],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/icon.svg",
