@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background-light text-text-main font-body antialiased overflow-x-hidden leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  /* Hide default details marker */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details summary {
+    list-style: none;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-text-main;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply text-3xl font-bold leading-tight text-text-main sm:text-4xl md:text-5xl;
+  }
+
+  .section-subheading {
+    @apply text-base leading-relaxed text-text-muted sm:text-lg;
+  }
+
+  .section-eyebrow {
+    @apply mb-3 block text-sm font-bold uppercase tracking-[0.2em] text-primary;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-gray-100 bg-white shadow-sm;
+  }
+}

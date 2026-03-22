@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClearMind Counseling - Therapist Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d9dad5",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#d5e8cf",
+              "secondary-fixed-dim": "#b9ccb4",
+              "on-primary-fixed": "#002105",
+              "inverse-surface": "#2f312d",
+              "surface-container-highest": "#e2e3dd",
+              "on-secondary-fixed": "#101f10",
+              "outline-variant": "#c2c9bd",
+              "on-secondary-container": "#586955",
+              "on-primary-fixed-variant": "#284f2a",
+              "surface-variant": "#e2e3dd",
+              "surface-container": "#eeeee8",
+              "on-secondary-fixed-variant": "#3b4b39",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#fbb2c9",
+              "tertiary-container": "#ce8aa0",
+              "surface-tint": "#40683f",
+              "surface-container-low": "#f3f4ee",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "primary": "#40683f",
+              "on-tertiary-fixed": "#370b1e",
+              "secondary": "#526350",
+              "tertiary": "#874d61",
+              "on-tertiary-fixed-variant": "#6b3649",
+              "inverse-primary": "#a5d2a1",
+              "on-tertiary-container": "#562437",
+              "primary-fixed": "#c1eebb",
+              "tertiary-fixed": "#ffd9e3",
+              "primary-container": "#7da87a",
+              "background": "#f9faf4",
+              "secondary-fixed": "#d5e8cf",
+              "surface-container-high": "#e8e9e3",
+              "on-background": "#1a1c19",
+              "inverse-on-surface": "#f0f1eb",
+              "surface-bright": "#f9faf4",
+              "on-secondary": "#ffffff",
+              "surface": "#f9faf4",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "outline": "#72796f",
+              "on-primary-container": "#153c19",
+              "on-surface-variant": "#424940",
+              "on-surface": "#1a1c19",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#a5d2a1"
+            },
+            fontFamily: {
+              "headline": ["Playfair Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-emerald-900 font-headline">ClearMind Counseling</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-zinc-500 font-medium hover:text-emerald-600 transition-colors" href="#">Home</a>
+<a class="text-zinc-500 font-medium hover:text-emerald-600 transition-colors" href="#">Services</a>
+<a class="text-zinc-500 font-medium hover:text-emerald-600 transition-colors" href="#">About</a>
+<a class="text-zinc-500 font-medium hover:text-emerald-600 transition-colors" href="#">Contact</a>
+</nav>
+<a class="hidden md:inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-on-primary shadow-sm transition-colors hover:bg-on-primary-fixed-variant" href="#">Book Session</a>
+</div>
+</header>
+<main class="pt-24 pb-12 px-6 max-w-7xl mx-auto">
+<!-- Progress Indicator -->
+<div class="mb-12">
+<div class="flex items-center justify-between max-w-2xl mx-auto mb-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</div>
+<span class="text-xs font-bold text-primary">Therapist</span>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest mx-4 mb-6"></div>
+<div class="flex flex-col items-center gap-2 opacity-40">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold">2</div>
+<span class="text-xs font-medium">Session</span>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest mx-4 mb-6"></div>
+<div class="flex flex-col items-center gap-2 opacity-40">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold">3</div>
+<span class="text-xs font-medium">Details</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Content: Selection -->
+<div class="lg:col-span-8">
+<header class="mb-10">
+<h1 class="text-3xl md:text-4xl font-extrabold text-on-background mb-3 font-headline">Step 1: Choose Your Therapist</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        Our compassionate experts are here to guide you through the noise and back to yourself.
+                    </p>
+</header>
+<div class="space-y-6">
+<!-- Specialist Card 1 -->
+<div class="group relative bg-surface-container-lowest border border-outline-variant p-6 rounded-xl transition-all hover:shadow-lg hover:border-primary-container flex flex-col md:flex-row gap-6">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Ms. Janhavi More" class="w-full h-full object-cover" data-alt="Professional headshot of a female clinical psychologist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp5BCOoOPIgGD0fHiGvXotZ6aUCdMduvAkQuzqY_Tzvwy_c6g9jATe3vyU9HquVJ4ZhuFZidmW17Wa-UfOQZXfqd_hTWJ30spjZE79APG5eFQ1y_F_SeWqri8ovVdwLkt8BPTzGyJrw_601Euzte1uNHesIw2gmaWjdZ3ehO0K5D9maoefE5WRN-ooMEnF2VjwpbhLUf7uThfNRyd-zpACgSNtGU2DuCBoTgSaJMkflKtq9iE7a6zNnplcbuQDVqMJQAYeheJO9Yk"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-xl font-bold text-on-surface font-headline">Ms. Janhavi More</h3>
+<p class="text-primary font-medium">Psychologist</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-surface">₹1500</p>
+<p class="text-xs text-on-surface-variant">per 50-min session</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-medium rounded-full">English</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-medium rounded-full">Hindi</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-medium rounded-full">Marathi</span>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant leading-relaxed line-clamp-2">
+                                Passionate, practical support for anxiety, stress, and emotional overwhelm with a client-centred therapeutic approach.
+                            </p>
+</div>
+<div class="flex items-center justify-end md:w-32">
+<button class="w-full md:w-auto px-6 py-2.5 bg-primary text-on-primary font-bold rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm">
+                                Select
+                            </button>
+</div>
+</div>
+<!-- Specialist Card 2 -->
+<div class="group relative bg-surface-container-lowest border border-outline-variant p-6 rounded-xl transition-all hover:shadow-lg hover:border-primary-container flex flex-col md:flex-row gap-6">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Mr. Vikas Kamble" class="w-full h-full object-cover" data-alt="Professional headshot of a male counseling psychologist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVNoESt23opTtpT6unDEYisQAGdqOcVH32uiwmUwagOpzX2wIORw1tIKLNWVAfe1KMr1hOhhJUnam6oGnaK1pqgHdzdrzssbhygNkLJKry7yMWB1KM8yORSoN9mCZkdDE0xZ9uViAT4GSs2Gp1bmgjpi7Ry7pbnH41wEB1s65ZQs47AyhDAumrh2_K1fH2T59a4Msoya-v9j61r6TV466U7EeGryCiEBAiBu92lJfaAQeu_AYsiYuIvAP7HPoHlDxrSEyb7pW1Ikw"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-xl font-bold text-on-surface font-headline">Mr. Vikas Kamble</h3>
+<p class="text-primary font-medium">Psychologist</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-surface">₹1500</p>
+<p class="text-xs text-on-surface-variant">per 50-min session</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-medium rounded-full">English</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-medium rounded-full">Hindi</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-medium rounded-full">Kannada</span>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant leading-relaxed line-clamp-2">
+                                Calm, structured support for overthinking, burnout, relationship stress, and career confusion.
+                            </p>
+</div>
+<div class="flex items-center justify-end md:w-32">
+<button class="w-full md:w-auto px-6 py-2.5 bg-primary text-on-primary font-bold rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm">
+                                Select
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Content: Sticky Summary -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 space-y-4">
+<div class="bg-surface-container-high p-6 rounded-xl border border-outline-variant">
+<h2 class="text-lg font-bold text-on-surface mb-6 font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_basket">shopping_basket</span>
+                            Session Request Summary
+                        </h2>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<span class="text-sm font-medium text-on-surface-variant">Therapist</span>
+<span class="text-sm font-bold text-on-surface text-right">Choose your preferred therapist</span>
+</div>
+<div class="flex justify-between items-start">
+<span class="text-sm font-medium text-on-surface-variant">Session fee</span>
+<div class="text-right">
+<span class="text-sm font-bold text-on-surface">₹1500</span>
+<p class="text-[10px] text-on-surface-variant">50-minute session</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs font-bold text-tertiary uppercase tracking-wider">Step 1 of 3</span>
+</div>
+<p class="text-xs text-on-surface-variant">Choose the therapist whose style feels like the best fit. Your request is confirmed by the ClearMind team, not by instant checkout.</p>
+</div>
+</div>
+</div>
+<!-- Visual Accent Card -->
+<div class="bg-tertiary-container p-6 rounded-xl text-on-tertiary-container relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-bold mb-1">Why ClearMind?</h4>
+<p class="text-xs leading-relaxed opacity-90">4.9 rating, 1,200+ sessions completed, and a calm human-led process focused on emotional safety.</p>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="psychology">psychology</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
